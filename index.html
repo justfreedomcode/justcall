@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <script type='text/javascript' src='https://cdn.scaledrone.com/scaledrone.min.js'></script>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <style>
+    body {
+      padding: 0;
+      background-color: #555;
+      color: #fff;
+      font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+    }
+    #remoteVideo {
+    	z-index: 0;
+    	position: fixed;
+    	left: 0;
+    	top: 0;
+    	width: 100%;
+    	height: 100%;
+    }
+    #localVideo {
+      max-width: calc(50% - 100px);
+      margin: 0 0;
+      box-sizing: border-box;
+      border-radius: 2px;
+      padding: 0;
+      position: fixed;
+      right: 5px;
+      bottom: 5px;
+      z-index: 1;
+      box-shadow: rgba(156, 172, 172, 0.2) 0px 2px 2px, rgba(156, 172, 172, 0.2) 0px 4px 4px, rgba(156, 172, 172, 0.2) 0px 8px 8px, rgba(156, 172, 172, 0.2) 0px 16px 16px, rgba(156, 172, 172, 0.2) 0px 32px 32px, rgba(156, 172, 172, 0.2) 0px 64px 64px;
+      display: none; /* For audio-only calls */
+    }
+    
+    #callInfo {
+    	background-color: rgba(0, 0, 0, 0.2);
+    	z-index: 1;
+    	position: fixed;
+    	left: 0;
+    	top: 0;
+    	width: 100%;
+    	display: none; /* For user JS */
+    }
+    #footer {
+    	z-index: 2;
+    	position: fixed;
+    	left: 0;
+    	bottom: 10%;
+    	width: 100%;
+    }
+    
+    #contactTitle {
+    	font-size: 16pt;
+    }
+    #callTimer {
+    	font-size: 8pt;
+    }
+  </style>
+</head>
+<body>
+<center id="callInfo">
+	<p id="contactTitle">Contact</p>
+	<sup id="callTimer">Waiting connection...</sup>
+</center>
+
+<video id="localVideo" autoplay muted></video>
+<video id="remoteVideo" autoplay></video>
+<center id="footer">
+	<img id="hangup" src="hangup.png">
+</center>
+
+<script src="script.js"></script>
+<script src="setup.js"></script>
+
+</body>
+</html>
